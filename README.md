@@ -10,6 +10,8 @@ is a separate context switch between the PL/SQL and SQL engines, and on a large
 table that overhead — not the actual work — becomes the bottleneck. These scripts
 demonstrate the fix on a 200,000-row table you can create locally.
 
+![Row by row vs. bulk binding: 200,000 single-row INSERTs, one context switch per row, against 40 batches of 5,000 rows with BULK COLLECT and FORALL](docs/row-by-row-vs-bulk.png)
+
 ## The scripts
 
 Run them in order against any Oracle database (including Oracle XE) with SQL\*Plus,
